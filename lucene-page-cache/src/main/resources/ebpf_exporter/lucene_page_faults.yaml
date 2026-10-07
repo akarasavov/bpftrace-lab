@@ -1,7 +1,14 @@
 metrics:
   counters:
-    - name: page_faults_per_index
-      help: Major page faults (pages loaded from disk) per Lucene index directory
+    - name: page_cache_lookups_per_index
+      help: Total mmap page-cache lookups (filemap_fault) per Lucene index directory
+      labels:
+        - name: index
+          size: 32
+          decoders:
+            - name: string
+    - name: page_cache_hits_per_index
+      help: Page-cache hits (page already resident, not loaded from disk) per Lucene index directory
       labels:
         - name: index
           size: 32
