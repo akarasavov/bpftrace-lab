@@ -1,0 +1,15 @@
+metrics:
+  counters:
+    - name: page_cache_ops_total
+      help: Page cache operation counters by type
+      labels:
+        - name: operation
+          size: 1
+          decoders:
+            - name: uint
+            - name: static_map
+              static_map:
+                0: cache_access
+                1: cache_writes
+                2: page_add_lru
+                3: page_mark_dirties

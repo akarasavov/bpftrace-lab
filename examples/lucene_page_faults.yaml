@@ -1,0 +1,10 @@
+metrics:
+  counters:
+    - name: page_faults_per_index
+      help: Major mmap page faults (pages loaded from disk) per Lucene index directory
+      labels:
+        - name: index
+          size: 32
+          decoders:
+            - name: string
+
